@@ -10,14 +10,21 @@ CONNECTIONS = 3000
 
 if __name__ == "__main__":
 
-    mongoClient = MongoClient("mongodb://localhost:27017/")
-    redis = redis.Redis("localhost")
+    print "Iniciando servidor na porta %s" % str(PORT)
 
-    router = Router()
-    router.add_route("/find", "app.control.HotelControl", "find")
-    router.add_route("/availabilities", "app.control.HotelControl", "find_availability")
+    try:
 
-    rest = Rest(router, mongoClient, redis)
+        mongoClient = MongoClient("mongodb://localhost:27017/")
+        redis = redis.Redis("localhost")
 
-    server = MegaSocket(rest,HOST, PORT, CONNECTIONS)
-    server.start()
+        router = Router()
+        router.add_route("/find", "app.control.HotelControl", "find")
+        router.add_route("/availabilities", "app.control.HotelControl", "find_availability")
+
+        rest = Rest(router, mongoClient, redis)
+
+        server = MegaSocket(rest,HOST, PORT, CONNECTIONS)
+        server.start()
+
+    except Exception, e:
+        print "Erro ao iniciar o servidor"

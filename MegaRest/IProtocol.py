@@ -39,4 +39,4 @@ class IProtocol:
 
         self.request()
         self.reply()
-        #self.connection.close()
+        self.connection.close()

@@ -39,7 +39,7 @@ class HotelControl(object):
                 json_data = json_encoder.encode(response)
 
                 protocol.cachedb.set(key, json_data)
-                protocol.cachedb.expire(key, 1)
+                protocol.cachedb.expire(key, 60)
 
                 return response
 
@@ -122,7 +122,7 @@ class HotelControl(object):
                 json_data = json_encoder.encode(response)
 
                 protocol.cachedb.set(key, json_data)
-                protocol.cachedb.expire(key, 1)
+                protocol.cachedb.expire(key, 60)
 
                 return response
 

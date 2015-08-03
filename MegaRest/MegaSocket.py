@@ -48,4 +48,4 @@ class MegaSocket(object):
                 args = self.__queuee.pop(0)
                 self.__protocol.run(args[0], args[1], args[2])
             else:
-                time.sleep(1)
+                time.sleep(0.1)
