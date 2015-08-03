@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Prepended and Appended Inputs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="datepicker/css/bootstrap-datepicker.min.css">
+
+<style type="text/css">
+    .bs-example{
+    	margin: 20px
+    }
+    .message{
+    	margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="bs-example">
+	<form>
+        
+        <div class="row">
+            
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                    <input type="text" class="form-control" name="city" id="city" placeholder="cidade ou hotel">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="col-xs-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        <input type="text" class="form-control" name="checkin_date" id="checkin_date" placeholder="entrada">
+                    </div>
+                </div>
+
+                <div class="col-xs-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        <input type="text" class="form-control" name="checkout_date" id="checkout_date" placeholder="saida">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="checkbox">
+                  <label><input type="checkbox" value="1" name="no_date_range" id="no_date_range">Ainda não defini as datas</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 center">
+                <button type="button" id="search" class="btn btn-large btn-primary">Buscar</button>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="alert alert-danger message hide">
+      Nenhum hotel disponível
+    </div>
+
+    <table class="table table-striped hide" id="table_results">
+        <thead>
+            <tr>
+                <th>Cidade</th>
+                <th>Hotel</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="bootstrap-typeahead.min.js"></script>
+<script src="datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="datepicker/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>                                		
