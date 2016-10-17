@@ -19,4 +19,4 @@ Esses comandos tem que ser o suficiente para configurar meu mac os x OU ubuntu e
 * Preciso que os seus serviços suportem um volume de 1000 requisições por segundo
 
 ***Artefatos***
-* Imagens e database de hoteis e disponibilidades estão na pasta arquivos
+* Imagens e database de hoteis e disponibilidades estão na pasta artefatos
