@@ -23,7 +23,7 @@ module.exports.bootstrap = function(cb) {
   	Avail.destroy({}).exec(function (err) {});
   
   	//Reading hotels
-  	var streamHotel = fs.createReadStream("../../../artefatos/hoteis.txt");
+  	var streamHotel = fs.createReadStream("../../artefatos/hoteis.txt");
  
 	var csvHotelStream = sails.fastcsv()
 	    .on("data", function(data){
@@ -46,7 +46,7 @@ module.exports.bootstrap = function(cb) {
 	streamHotel.pipe(csvHotelStream);
 
 	//Reading places
-  	var streamPlace = fs.createReadStream("../../../artefatos/hoteis.txt");
+  	var streamPlace = fs.createReadStream("../../artefatos/hoteis.txt");
  
 	var csvPlaceStream = sails.fastcsv()
 	    .on("data", function(data){
@@ -92,12 +92,11 @@ module.exports.bootstrap = function(cb) {
 	streamPlace.pipe(csvPlaceStream);
 
 	//Reading available
-	var streamAvail = fs.createReadStream("../../../artefatos/disp.txt");
+	var streamAvail = fs.createReadStream("../../artefatos/disp.txt", { headers: true });
 
-	var csvAvailStream = sails.fastcsv({ headers: true })
-	    .on("data", function(data){
-
-
+	var csvAvailStream = sails.fastcsv()
+		.on("data", function(data)
+		{
 			var dateParts = data[1].split('/');
 			
 	    	 Avail.create({

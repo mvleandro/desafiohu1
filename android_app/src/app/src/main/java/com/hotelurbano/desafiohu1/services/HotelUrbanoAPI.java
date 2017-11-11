@@ -12,7 +12,7 @@ import retrofit.converter.GsonConverter;
  */
 public class HotelUrbanoAPI {
 
-    private static final String API_ENDPOINT = "http://192.168.0.10:1337";
+    private static final String API_ENDPOINT = "http://localhost:1337";
 
 
     private static RestAdapter restAdapter;
