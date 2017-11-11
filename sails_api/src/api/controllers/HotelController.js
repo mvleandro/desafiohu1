@@ -45,7 +45,8 @@ module.exports = {
 				Avail.find({where: {
 		   		  hotelId : ids, 
 				  date : { '>=': startDate, '<=': endDate },
-				  available: true 
+				  available: true,
+				  minNight: { '>=': days }
 				
 				}, sort: "hotelId"}).exec(function createCB(err, data){
 						console.log("result: " + data);
